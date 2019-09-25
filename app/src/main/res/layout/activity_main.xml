@@ -8,10 +8,10 @@
 
 
     <FrameLayout
-        android:layout_above="@id/bottomNav"
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNav"/>
 
 
 
@@ -20,8 +20,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:background="@color/colorPrimary"
         app:itemIconTint="@color/colorWhite"
         app:itemTextColor="@color/colorWhite"
-        app:menu="@menu/bottom_nav_menu"/>
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_alignParentRight="true" />
+
+
 </RelativeLayout>
