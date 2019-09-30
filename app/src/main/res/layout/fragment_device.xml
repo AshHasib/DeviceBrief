@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -17,24 +18,25 @@
             android:id="@+id/collapsibleLayout"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="@color/colorPrimaryDark">
-            
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp">
+                android:layout_height="250dp"
+                android:background="@drawable/app_bg">
 
                 <TextView
                     android:id="@+id/txtDeviceName"
                     android:layout_width="320dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="80dp"
+                    android:text="Xiaomi Redmi Note 6 Pro"
                     android:textColor="@color/colorWhite"
                     android:textFontWeight="500"
-                    android:layout_height="wrap_content"
-                    android:text="Xiaomi Redmi Note 6 Pro"
                     android:textSize="40dp" />
             </RelativeLayout>
-            
+
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
@@ -51,14 +53,229 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:padding="16dp"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24dp"
-            android:text="@string/lorem_ipsum">
+            android:layout_height="match_parent">
 
-        </TextView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDeviceInfo"
+                android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/colorOffWhite"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="7"
+                        android:textSize="28dp"
+                        android:padding="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Device Information"/>
 
+                    <ImageView
+                        android:id="@+id/imgDeviceInfo"
+                        android:layout_margin="4dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_down_arrow_black" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableDeviceInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_duration="500"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/txtBrand"
+                        android:text="Brand: Xiaomi"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtModel"
+                        android:text="Model: X23526"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtResolution"
+                        android:text="Resolution: 1160 x 1980"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtDensity"
+                        android:text="Model: X23526"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOSInfo"
+                android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/colorOffWhite"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="7"
+                        android:textSize="28dp"
+                        android:padding="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="OS Information"/>
+
+                    <ImageView
+                        android:id="@+id/imgOSInfo"
+                        android:layout_margin="4dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_down_arrow_black" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableOSInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_duration="500"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtOsName"
+                        tool:text="Name: Android MarshMallow"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtOsVersion"
+                        tool:text="Version: 9.1.1"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtApiLevel"
+                        tool:text="API Level: 28"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/txtOsFirstInstalled"
+                        tool:text="Installed on: 29/9/2019"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/txtOsLastUpdated"
+                        tool:text="Installed on: 29/9/2019"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSensorInfo"
+                android:layout_margin="@dimen/cardview_compat_inset_shadow"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/colorOffWhite"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="7"
+                        android:textSize="28dp"
+                        android:padding="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sensors"/>
+
+                    <ImageView
+                        android:id="@+id/imgSensorsInfo"
+                        android:layout_margin="4dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_down_arrow_black" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableSensorInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_duration="500"
+                app:el_expanded="true"
+                app:el_parallax="0.5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtSensorsList"
+                        tool:text="Sensors"
+                        android:textSize="18dp"
+                        android:padding="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
